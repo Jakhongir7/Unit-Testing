@@ -6,22 +6,25 @@ using System.Threading.Tasks;
 
 namespace Unit_Testing.Tasks
 {
-    class OddEven
+    public class OddEven
     {
-        public static string CheckOddEven(int n)
+        public static string CheckOddEven(int num)
         {
-            int m = n / 2;
-            if (n == 1)
+            int half = num / 2;
+
+            if (num <= 0 || num > 100) throw new ArgumentOutOfRangeException("You should provide a number in a range from 1 to 100.");
+
+            if (num == 1)
             {
                 return "Odd";
             }
-            if (n % 2 == 0)
+            if (num % 2 == 0)
             {
                 return "Even";
             }
-            for (int i = 3; i <= m; i++)
+            for (int i = 4; i <= half; i++)
             {
-                if (n % i == 0)
+                if (num % i == 0)
                 {
                     return "Odd";
                 }

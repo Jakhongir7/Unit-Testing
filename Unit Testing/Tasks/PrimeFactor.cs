@@ -8,21 +8,23 @@ namespace Unit_Testing.Tasks
 {
     public class PrimeFactor
     {
-        public static string CheckPrimeComposite(int n)
+        public static string CheckPrimeComposite(int num)
         {
-            int m = n / 2;
-            if (n <= 0 || n > 100) throw new ArgumentOutOfRangeException("You should provide some text.");
-            if (n == 1)
+            int half = num / 2;
+
+            if (num <= 0 || num > 100) throw new ArgumentOutOfRangeException("You should provide a number in a range from 1 to 100.");
+
+            if (num == 1)
             {
                 return "1";
             }
-            else if (n == 2 || n == 3)
+            else if (num == 2 || num == 3)
             {
                 return "Prime";
             }
-            for (int i = 2; i <= m; i++)
+            for (int i = 2; i <= half; i++)
             {
-                if (n % i == 0)
+                if (num % i == 0)
                 {
                     return "Composite";
                 }

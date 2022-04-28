@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace Unit_Testing.Tasks
 {
-    class FizzBuzz
+    public class FizzBuzz
     {
-        public static string ReplaceWithFizzBuzz(int n)
+        public static string ReplaceWithFizzBuzz(int num)
         {
-            if (n % 3 == 0 && n % 5 == 0)
+            if (num <= 0 || num > 100) throw new ArgumentOutOfRangeException("You should provide a number in a range from 1 to 100.");
+
+            if (num % 3 == 0 && num % 5 == 0)
             {
                 return "FizzBuzz";
             }
-            else if (n % 3 == 0)
+            else if (num % 3 == 0)
             {
                 return "Fizz";
             }
-            else if (n % 5 == 0)
+            else if (num % 5 == 0)
             {
                 return "Buzz";
             }
             else
             {
-                return n.ToString();
+                return num.ToString();
             }
         }
     }
